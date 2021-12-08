@@ -10,7 +10,7 @@ function ChatPage() {
   useEffect(() => {
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
     setUser(userInfo);
-  }, []);
+  }, [setUser]);
 
   return (
     <div style={{ width: "100%" }}>

@@ -6,6 +6,7 @@ const db = require("./config/db").mongoURI;
 const chats = require("./data/data");
 const userAPI = require("./routes/userRoutes");
 const chatAPI = require("./routes/chatRoutes");
+const messageAPI = require("./routes/messageRoutes");
 const { errorHandler, notFound } = require("./middlewares/errorMiddleWare");
 const app = express();
 dotenv.config();
@@ -19,6 +20,7 @@ app.use(
 
 app.use("/api/user", userAPI);
 app.use("/api/chat", chatAPI);
+app.use("/api/message", messageAPI);
 app.use(notFound);
 app.use(errorHandler);
 // app.get("/", (req, res) => {

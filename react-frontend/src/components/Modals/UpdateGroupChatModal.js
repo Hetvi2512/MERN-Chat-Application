@@ -21,7 +21,7 @@ import { ChatState } from "../../Context/ChatProvider";
 import UserBadgeItem from "../Users/UserBadgeItem";
 import axios from "axios";
 import UserListItem from "../Users/UserListItem";
-function UpdateGroupChatModal({ fetchAgain, setFetchAgain }) {
+function UpdateGroupChatModal({ fetchAgain, setFetchAgain, fetchMessage }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [groupChatName, setGroupChatName] = useState();
   const [search, setSearch] = useState("");
@@ -117,6 +117,7 @@ function UpdateGroupChatModal({ fetchAgain, setFetchAgain }) {
           : setSelectedChat(response.data);
 
         setFetchAgain(!fetchAgain);
+        fetchMessage();
         setLoading(false);
       })
       .catch((error) => {
