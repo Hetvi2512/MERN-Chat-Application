@@ -40,7 +40,6 @@ function GroupChatModal({ children }) {
           headers: { Authorization: `Bearer ${user.token}` },
         })
         .then((response) => {
-          console.log(response.data);
           setSearchResult(response.data);
           setLoading(false);
         });

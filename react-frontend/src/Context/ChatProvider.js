@@ -12,7 +12,7 @@ const ChatProvider = ({ children }) => {
   const [chats, setChats] = useState([]);
   useEffect(() => {
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-    console.log("USER IN CONTEXT", userInfo);
+
     setUser(userInfo);
     if (!userInfo) {
       history.push("/");

@@ -42,9 +42,8 @@ function UpdateGroupChatModal({ fetchAgain, setFetchAgain, fetchMessage }) {
       });
       return;
     }
-    console.log(selectedChat.groupAdmin._id);
+
     if (selectedChat.groupAdmin._id !== user._id) {
-      console.log("INSIDE");
       toast({
         title: "Only admins can add someone!",
         status: "error",
@@ -144,7 +143,6 @@ function UpdateGroupChatModal({ fetchAgain, setFetchAgain, fetchMessage }) {
           headers: { Authorization: `Bearer ${user.token}` },
         })
         .then((response) => {
-          console.log(response.data);
           setSearchResult(response.data);
           setLoading(false);
         });
